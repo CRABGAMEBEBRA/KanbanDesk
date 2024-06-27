@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.main{
+    background-color: #0079BF;
+	margin: 0 auto;
+	flex-grow: 1;
+    height: 88.7vh;
+    display: flow-root;
+}
+.divBacklog{
+    width:282px;
+    background-color: #EBECF0;
+    border-radius: 10px;
+}
+.backlog{
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21.09px;
+    text-align: left;
+    padding-top: 13px;
+    padding-left: 12px;
+    margin-bottom: 0px;
+    box-sizing: border-box;
+    width: 232px;
+    height: 29px;
+
+
+}
+.login{
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21.09px;
+    text-align: left;
+    background-color: #FFFFFF;
+    width: 258px;
+    height: 57px;
+    border-radius: 5px;
+    margin-left: 12px;
+    margin-top: 15px;
+    padding-left: 8px;
+    padding-top: 8px;
+    box-sizing: border-box;
+}
+.sprint{
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21.09px;
+    text-align: left;
+    background-color: #FFFFFF;
+    width: 258px;
+    height: 35px;
+    border-radius: 5px;
+    margin-left: 12px;
+    padding-top: 8px;
+    margin-top: 15px;
+    padding-left: 8px;
+    box-sizing: border-box;
+}
+.add{
+    color: #5E6C84;
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21.09px;
+    text-align: left;
+    margin-top: 17px;
+    margin-left: 13px;
+    padding-bottom: 8px;
+}
