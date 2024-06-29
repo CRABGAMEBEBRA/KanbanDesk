@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.footer{
+    background-color: #0067A3;
+    display: flex;
+    flex-direction: row
+}
+.activet{
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21.09px;
+    text-align: left;
+    color:#FFFFFF;
+    margin-left: 21px;
+}
+.finishedt{
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21.09px;
+    text-align: left;
+    color:#FFFFFF;
+    margin-left: 36px;
+}
+.kanbanB{
+    margin-left: auto;
+    margin-right: 19px;
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21.09px;
+    text-align: left;
+    color:#FFFFFF;
+}

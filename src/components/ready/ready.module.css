@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-.main{
-    background-color: #0079BF;
-	margin: 0 auto;
-	flex-grow: 1;
-    height: 88.7vh;
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
 .divReady{
     width:282px;
     background-color: #EBECF0;
@@ -55,6 +46,10 @@
     margin-top: 17px;
     margin-left: 13px;
     padding-bottom: 8px;
+    cursor: pointer;
+}
+.add:hover{
+    text-decoration: underline;
 }
 .select{
     width: 258px;
