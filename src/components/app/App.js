@@ -14,10 +14,7 @@ function App() {
   const [finishedList, setfinishedList] = useState([])
 
   const handleFormSubmit = (id, list, title, issue) => {
-    localStorage.setItem(`${id}.title`, title);
-    localStorage.setItem(`${id}.list`, list);
-    localStorage.setItem(`${id}.issue`, issue);
-    localStorage.setItem(`${id}.id`, id);
+    localStorage.setItem(`n${id}`, [title, list, issue, id]);
   };
 
   return (

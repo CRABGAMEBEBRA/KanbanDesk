@@ -2,7 +2,6 @@ import css from './backlog.module.css'
 import {useState, useContext, useEffect} from 'react'
 import { UserContext } from '../app/App';
 
-
 export default function Backlog(){
     const {state, setState, handleFormSubmit} = useContext(UserContext);
     const [handlead, sethandleadd] = useState()
@@ -13,17 +12,20 @@ export default function Backlog(){
         setnameTitle(event.target.value)
       };
     useEffect(() => 
-        {
-            for (let i = 0; i*4 < localStorage.length; i++) {
-            let idLC = localStorage.getItem(`${i}.id`)
-            let issue = localStorage.getItem(`${i}.issue`)
-            let list = localStorage.getItem(`${i}.list`)
-            let title = localStorage.getItem(`${i}.title`)
+        {  
+            for (let i = 0; i < localStorage.length; i++) {
+                console.log(localStorage)
+            let stroka = localStorage.getItem(`n${i}`).split(",")
+            let idLC = stroka[3]
+            if (Number(idLC)>newValue){setnewValue(Number(idLC))} 
+            let issue = stroka[2]
+            let list = stroka[1]
+            let title = stroka[0]
             if(list == 'state'){
                 setState([...state, {title:title, 
                 issues:issue,
-                id:idLC,
-            }])}}},[])
+                id:Number(idLC),
+            }])}};setnewValue(localStorage.length)},[])
             //localStorage.clear();
 
     return (
