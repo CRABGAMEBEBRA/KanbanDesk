@@ -1,6 +1,9 @@
 import css from './backlog.module.css'
 import {useState, useContext, useEffect} from 'react'
 import { UserContext } from '../app/App';
+import React, { Component } from 'react';
+
+
 
 export default function Backlog(){
     const {state, setState, handleFormSubmit} = useContext(UserContext);
@@ -11,23 +14,21 @@ export default function Backlog(){
     const handleInput = (event) => {
         setnameTitle(event.target.value)
       };
-    useEffect(() => 
-        {  
+    
+      componentDidMount() {  
             for (let i = 0; i < localStorage.length; i++) {
                 console.log(localStorage)
             let stroka = localStorage.getItem(`n${i}`).split(",")
             let idLC = stroka[3]
-            if (Number(idLC)>newValue){setnewValue(Number(idLC))} 
             let issue = stroka[2]
             let list = stroka[1]
             let title = stroka[0]
-            if(list == 'state'){
-                setState([...state, {title:title, 
-                issues:issue,
-                id:Number(idLC),
-            }])}};setnewValue(localStorage.length)},[])
+            if(list === 'state'){
+                setState([...state, {title:`${title}`, 
+                    issues:`${issue}`,
+                    id:Number(`${idLC}`),
+                }])};setnewValue(newValue => localStorage.length)}}
             //localStorage.clear();
-
     return (
             <div className={css.divBacklog}>
                 <p className={css.backlog}>Backlog</p>
