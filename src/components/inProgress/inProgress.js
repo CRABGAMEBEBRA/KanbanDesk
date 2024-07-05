@@ -1,23 +1,24 @@
 import css from './inProgress.module.css'
 import {useState, useContext} from 'react'
 import { UserContext } from '../app/App';
-
+import { Link } from 'react-router-dom';
 
 export default function InProgress(){
-    const {spisok, setspisok, readyList, setreadyList } = useContext(UserContext);
+    const {spisok, setspisok, readyList, setreadyList,handleFormSubmit } = useContext(UserContext);
     const [handlead, sethandleadd] = useState()
     const handleDropdownChange = (event) => {
-        setreadyList([...readyList, {title:event.target.value, 
+        setreadyList(readyList => [...readyList, {title:event.target.value, 
             issues:(spisok.find(spisok => spisok.title == event.target.value)).issues,
             id:(spisok.find(spisok => spisok.title == event.target.value)).id,
             }])
         setspisok(spisok.filter(spisok => (spisok.title != event.target.value)));
         sethandleadd(handlead => !handlead)
+        handleFormSubmit((spisok.find(spisok => spisok.title == event.target.value)).id, 'inProgress', event.target.value, (spisok.find(spisok => spisok.title == event.target.value)).issues)
       };
     return(
         <div className={css.divInprog}>
             <p className={css.InProg}>In Progress</p>
-            <div>{readyList.map(readyList => (<div key={readyList.id} className={css.newDiv}>{readyList.title}</div>))}</div>
+            <div>{readyList.map(readyList => (<Link to={`/tasks/${readyList.id}`}key={readyList.id} className={css.newDiv}>{readyList.title}</Link>))}</div>
             {!handlead? '' :
             <div>
                 <select className = {css.select} onChange={handleDropdownChange}>

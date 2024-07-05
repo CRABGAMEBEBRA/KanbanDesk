@@ -1,5 +1,5 @@
 import css from './main.module.css'
-import Backlog from '../Backlog'
+import Backlog from '../backlog'
 import Ready from '../ready'
 import InProgress from '../inProgress/inProgress'
 import Finished from '../Finished'
@@ -11,11 +11,12 @@ export default function Main(){
 
     return (
         <main className={css.main}>
-            <Content />
+            <Content>
             <Backlog/>
             <Ready/>
             <InProgress/>
             <Finished/>
+            </Content>
         </main>     
     )
 }

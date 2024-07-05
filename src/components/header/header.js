@@ -4,6 +4,7 @@ import arrowDown from './Vector (1).svg'
 import arrowUp from './Vector (2).svg'
 import square from './Rectangle 27.svg'
 import {useState} from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Header(){
     const [state, setState] = useState(1)
@@ -14,7 +15,7 @@ export default function Header(){
 
     return (
         <header className={css.header}>
-            <p className={css.kanban}>Awesome Kanban Board</p>
+            <Link to="/" className={css.kanban}>Awesome Kanban Board</Link>
             <div className={css.logMenu}>
                 <div className={css.profile}>
                     <img className={css.logoImg} src={user} alt='' />

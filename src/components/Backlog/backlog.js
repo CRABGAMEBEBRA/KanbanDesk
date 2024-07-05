@@ -1,45 +1,31 @@
 import css from './backlog.module.css'
-import {useState, useContext, useEffect} from 'react'
+import {useState, useContext} from 'react'
 import { UserContext } from '../app/App';
-import React, { Component } from 'react';
-
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 export default function Backlog(){
-    const {state, setState, handleFormSubmit} = useContext(UserContext);
+
+
+    const {state, setState, handleFormSubmit, newValue, setnewValue} = useContext(UserContext);
     const [handlead, sethandleadd] = useState()
     const [nameTitle, setnameTitle] = useState('')
-    const [newValue, setnewValue] = useState(0)
 
     const handleInput = (event) => {
         setnameTitle(event.target.value)
       };
-    
-      componentDidMount() {  
-            for (let i = 0; i < localStorage.length; i++) {
-                console.log(localStorage)
-            let stroka = localStorage.getItem(`n${i}`).split(",")
-            let idLC = stroka[3]
-            let issue = stroka[2]
-            let list = stroka[1]
-            let title = stroka[0]
-            if(list === 'state'){
-                setState([...state, {title:`${title}`, 
-                    issues:`${issue}`,
-                    id:Number(`${idLC}`),
-                }])};setnewValue(newValue => localStorage.length)}}
-            //localStorage.clear();
     return (
             <div className={css.divBacklog}>
                 <p className={css.backlog}>Backlog</p>
-                <div>{state.map(state => (<div key={state.id} className={css.newDiv}>{state.title}</div>))}</div>
+                <div>{state.map(state => (<Link to={`/tasks/${state.id}`} key={state.id} className={css.newDiv}>{state.title}</Link>))}</div>
                 {!handlead? '' :
                 <input className = {css.inputch} onChange={handleInput}></input>
                 }
                 <div onClick={() => {sethandleadd(handlead => !handlead)}} className={css.add}>+ Add card</div>
                 {(!handlead)? "" : 
                 <button className = {css.submitbut} onClick = {() =>{{nameTitle==0? sethandleadd(handlead => !handlead) :
-                    setState([...state, {title:nameTitle, 
+                    setState(state => [...state, {title:nameTitle, 
                              issues:'This task has no description',
                              id:newValue,
                              }])

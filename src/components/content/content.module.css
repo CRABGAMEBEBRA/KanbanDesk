@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.mainEl{
+    background-color: #0079BF;
+	margin: 0 auto;
+	flex-grow: 1;
+    height: 88.7vh;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.Newlink{
+    background-color: #FFFFFF;
+    height:84.7vh;
+    width:97vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 2vh;
+}
+.title{
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.13px;
+    text-align: left;
+    color: #000000;
+    margin-top: 23px;
+    margin-left: 28px;
+}
+.issues{
+    margin-top: 35px;
+    margin-left: 30px;
+    width:92vw;
+    height:35vw;
+}

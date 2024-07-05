@@ -16,6 +16,7 @@
     color: #FFFFFF;
     margin-left:20px;
     cursor: pointer;
+    text-decoration: none;
 }
 .arrowDown{
     margin-left: 6px;
