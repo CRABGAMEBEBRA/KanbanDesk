@@ -6,7 +6,7 @@ import css from './content.module.css'
 
 export default function Content(){
 
-    const {state, handleFormSubmit} = useContext(UserContext);
+    const {state, handleFormSubmit , MassivListov} = useContext(UserContext);
     
     let textValue
     const compCreating = (Object, list) =>{
@@ -25,10 +25,7 @@ export default function Content(){
             {state.map(state => (<Route path = {`/tasks/${state.id}`} element = {compCreating(state, `${state.list}`)}/>))}
             <Route path = '*' element = {
                 <div className={css.mainEl}>
-                    <DivList list="Backlog" />
-                    <DivList list="Ready"/>
-                    <DivList list="InProgress"/>
-                    <DivList list="Finished"/>
+                    {MassivListov.map(element => <DivList list={`${element}`} />)}
                 </div>}/>
             <Route path = '/tasks/*' element = {<div className={css.Newlink}> <p className={css.title}>This task is not existing</p></div>}/>   
         </Routes>

@@ -8,7 +8,7 @@ export const UserContext = createContext();
 
 function App() {
 
-  const MassivListov = ["Backlog", "Ready", "InProgress", "Finished", "asdxc"]
+  const MassivListov = ["Backlog", "Ready", "InProgress", "Finished"]
 
   const [state, setState] = useState([])   
 
