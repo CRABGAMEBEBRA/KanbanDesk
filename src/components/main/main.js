@@ -1,21 +1,18 @@
 import css from './main.module.css'
-import Backlog from '../backlog'
-import Ready from '../ready'
-import InProgress from '../inProgress/inProgress'
-import Finished from '../Finished'
+import DivList from '../DivList'
 import Content from '../content'
+import { UserContext } from '../app/App';
+import { useContext } from 'react'
 
 
 export default function Main(){
 
+    const {MassivListov} = useContext(UserContext);
 
     return (
         <main className={css.main}>
             <Content>
-            <Backlog/>
-            <Ready/>
-            <InProgress/>
-            <Finished/>
+                {MassivListov.forEach(element => <DivList list={`${element}`} />)}
             </Content>
         </main>     
     )
